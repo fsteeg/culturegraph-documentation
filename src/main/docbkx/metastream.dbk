@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://docbook.org/ns/docbook http://docbook.org/ns/docbook ">
+	
+	<title>Metastream</title>
+	<part>
+		<chapter>
+			<title>Kapitel 1</title>
+			<para>Hallo Welt!</para>
+		</chapter>
+	</part>
+</book>
