@@ -30,7 +30,7 @@
 
 				<configuration>
 					<sourceDirectory>${basedir}/src/main/docbkx</sourceDirectory>
-					<includes>metastream.dbk</includes>
+					<includes>culturegraph-tools.dbk, culturegraph-tutorials.dbk</includes>
 					<xincludeSupported>true</xincludeSupported>
 					<highlightSource>1</highlightSource>
 					<paperType>A4</paperType>
