@@ -5,19 +5,45 @@
 	<artifactId>documentation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<build>
 		<defaultGoal>pre-site</defaultGoal>
 		<plugins>
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>pre-site</phase>
+						<configuration>
+							<target>
+								<path id="wikitext.tasks.classpath">
+									<fileset dir="." includes="org.eclipse.mylyn.wikitext.*core*.jar" />
+								</path>
+								<taskdef classpathref="wikitext.tasks.classpath"
+									resource="org/eclipse/mylyn/wikitext/core/util/anttask/tasks.properties" />
+								<wikitext-to-html markupLanguage="Textile">
+									<fileset dir="src" includes="**/*.textile" />
+								</wikitext-to-html>
+								<wikitext-to-docbook markupLanguage="Textile">
+									<fileset dir="src" includes="**/*.textile" />
+								</wikitext-to-docbook>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>com.agilejava.docbkx</groupId>
 				<artifactId>docbkx-maven-plugin</artifactId>
 				<version>2.0.14</version>
-
 				<executions>
 					<execution>
 						<phase>pre-site</phase>
@@ -27,15 +53,13 @@
 						</goals>
 					</execution>
 				</executions>
-
 				<configuration>
-					<sourceDirectory>${basedir}/src/main/docbkx</sourceDirectory>
-					<includes>culturegraph-tools.dbk, culturegraph-tutorials.dbk</includes>
+					<sourceDirectory>${basedir}/src/main/wiki</sourceDirectory>
+					<includes>*.xml</includes>
 					<xincludeSupported>true</xincludeSupported>
 					<highlightSource>1</highlightSource>
 					<paperType>A4</paperType>
 				</configuration>
-
 				<dependencies>
 					<dependency>
 						<groupId>net.sf.docbook</groupId>
@@ -50,8 +74,8 @@
 						<version>1.2</version>
 					</dependency>
 				</dependencies>
-
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
