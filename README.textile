@@ -1,0 +1,11 @@
+h1. About
+
+This is a mirror of the repo at "https://svn.code.sf.net/p/culturegraph/code/documentation/":https://svn.code.sf.net/p/culturegraph/code/documentation
+
+h1. Build
+
+"!https://travis-ci.org/culturegraph/culturegraph-documentation.png?branch=integration!":http://travis-ci.org/culturegraph/culturegraph-documentation
+
+h1. License
+
+Apache License, Version 2.0: "http://www.apache.org/licenses/LICENSE-2.0.html":http://www.apache.org/licenses/LICENSE-2.0.html
